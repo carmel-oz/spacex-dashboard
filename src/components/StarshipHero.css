@@ -58,11 +58,11 @@
 
 .hero-specs {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1px;
   background: var(--border);
   border: 1px solid var(--border);
-  max-width: 660px;
+  max-width: 880px;
 }
 
 .hero-spec-item {
@@ -94,6 +94,7 @@
     grid-template-columns: repeat(2, 1fr);
     max-width: 100%;
   }
+}
 
   .hero-description {
     font-size: 13px;
