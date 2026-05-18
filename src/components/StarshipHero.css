@@ -1,0 +1,90 @@
+.starship-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 80px;
+  background: #000000;
+  overflow: hidden;
+}
+
+.hero-glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 65% 40%, rgba(0, 82, 136, 0.18) 0%, transparent 65%),
+    radial-gradient(ellipse at 30% 80%, rgba(0, 40, 80, 0.12) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding-top: 120px;
+}
+
+.hero-loading {
+  color: var(--text-muted);
+  font-size: 12px;
+  letter-spacing: 0.25em;
+}
+
+.hero-title {
+  font-size: clamp(72px, 11vw, 130px);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 0.9;
+  margin-bottom: 20px;
+  color: var(--text-primary);
+}
+
+.hero-tagline {
+  font-family: var(--font-condensed);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.45em;
+  color: var(--accent-light);
+  margin-bottom: 28px;
+}
+
+.hero-description {
+  font-size: 15px;
+  line-height: 1.85;
+  color: var(--text-secondary);
+  max-width: 580px;
+  margin-bottom: 56px;
+  font-weight: 300;
+}
+
+.hero-specs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  max-width: 660px;
+}
+
+.hero-spec-item {
+  background: rgba(0, 0, 0, 0.85);
+  padding: 22px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hero-spec-label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.hero-spec-value {
+  font-family: var(--font-condensed);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--text-primary);
+}
