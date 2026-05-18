@@ -38,16 +38,25 @@ export default function RocketSpecs() {
               <p className="rocket-description">{rocket.description}</p>
 
               <div className="specs-list">
-                {[
-                  { label: 'HEIGHT',       value: `${rocket.height?.meters}m` },
-                  { label: 'DIAMETER',     value: `${rocket.diameter?.meters}m` },
-                  { label: 'MASS',         value: `${(rocket.mass?.kg / 1000).toFixed(0)}t` },
+                {(rocket.name === 'Starship' ? [
+                  { label: 'HEIGHT',          value: `${rocket.height?.meters}m` },
+                  { label: 'DIAMETER',        value: `${rocket.diameter?.meters}m` },
+                  { label: 'MASS',            value: `${(rocket.mass?.kg / 1000).toFixed(0)}t` },
+                  { label: 'SUPER HEAVY ENG', value: '33× RAPTOR' },
+                  { label: 'STARSHIP ENG',    value: '6× RAPTOR VAC' },
+                  { label: 'PROPELLANT',      value: 'LCH₄ / LOX' },
+                  { label: 'SUCCESS RATE',    value: `${rocket.success_rate_pct}%` },
+                  { label: 'LEO PAYLOAD',     value: leoPayload ? `${leoPayload.kg.toLocaleString()} kg` : 'N/A' },
+                ] : [
+                  { label: 'HEIGHT',          value: `${rocket.height?.meters}m` },
+                  { label: 'DIAMETER',        value: `${rocket.diameter?.meters}m` },
+                  { label: 'MASS',            value: `${(rocket.mass?.kg / 1000).toFixed(0)}t` },
                   { label: '1ST STG ENGINES', value: `${rocket.first_stage?.engines}× ${rocket.engines?.type}` },
-                  { label: 'PROPELLANT',   value: `${rocket.engines?.propellant_1} / ${rocket.engines?.propellant_2}` },
-                  { label: 'COST / LAUNCH',value: `$${(rocket.cost_per_launch / 1_000_000).toFixed(0)}M` },
-                  { label: 'SUCCESS RATE', value: `${rocket.success_rate_pct}%` },
-                  { label: 'LEO PAYLOAD',  value: leoPayload ? `${leoPayload.kg.toLocaleString()} kg` : 'N/A' },
-                ].map(({ label, value }) => (
+                  { label: 'PROPELLANT',      value: `${rocket.engines?.propellant_1} / ${rocket.engines?.propellant_2}` },
+                  { label: 'COST / LAUNCH',   value: `$${(rocket.cost_per_launch / 1_000_000).toFixed(0)}M` },
+                  { label: 'SUCCESS RATE',    value: `${rocket.success_rate_pct}%` },
+                  { label: 'LEO PAYLOAD',     value: leoPayload ? `${leoPayload.kg.toLocaleString()} kg` : 'N/A' },
+                ]).map(({ label, value }) => (
                   <div key={label} className="spec-row">
                     <span className="spec-key">{label}</span>
                     <span className="spec-val">{value}</span>
