@@ -130,3 +130,41 @@
   background: var(--bg-card);
   color: var(--text-primary);
 }
+
+@media (max-width: 640px) {
+  .past-launches h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+
+  /* Hide ROCKET column on mobile */
+  .table-header {
+    grid-template-columns: 2fr 1fr 1fr;
+    padding: 10px 14px;
+  }
+
+  .table-header span:nth-child(2) {
+    display: none;
+  }
+
+  .launch-row {
+    grid-template-columns: 2fr 1fr 1fr;
+    padding: 13px 14px;
+  }
+
+  .rocket-label {
+    display: none;
+  }
+
+  .mission-name {
+    font-size: 13px;
+  }
+
+  .date-label {
+    font-size: 11px;
+  }
+
+  .outcome {
+    font-size: 10px;
+  }
+}

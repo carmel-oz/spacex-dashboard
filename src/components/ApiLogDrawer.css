@@ -148,6 +148,39 @@
 .log-row.active { background: rgba(0, 82, 136, 0.12); border-left: 2px solid var(--accent); }
 .log-row.failed { border-left: 2px solid var(--danger); }
 
+@media (max-width: 640px) {
+  /* Collapse to 4 columns: method | endpoint | status | time */
+  .log-header {
+    grid-template-columns: 55px 1fr 55px 65px;
+    padding: 8px 12px;
+  }
+
+  .log-row {
+    grid-template-columns: 55px 1fr 55px 65px;
+    padding: 9px 12px;
+  }
+
+  /* Hide SOURCE and DURATION columns */
+  .log-src,
+  .log-duration {
+    display: none;
+  }
+
+  .log-header span:nth-child(2),
+  .log-header span:nth-child(5) {
+    display: none;
+  }
+
+  .drawer-toolbar {
+    padding: 8px 12px;
+    gap: 10px;
+  }
+
+  .toolbar-legend {
+    display: none;
+  }
+}
+
 /* ── Method badges ── */
 .log-method {
   display: inline-block;

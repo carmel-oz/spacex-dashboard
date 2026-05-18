@@ -88,3 +88,23 @@
   letter-spacing: 0.04em;
   color: var(--text-primary);
 }
+
+@media (max-width: 640px) {
+  .hero-specs {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 100%;
+  }
+
+  .hero-description {
+    font-size: 13px;
+    margin-bottom: 32px;
+  }
+
+  .hero-spec-item {
+    padding: 16px 18px;
+  }
+
+  .hero-spec-value {
+    font-size: 17px;
+  }
+}

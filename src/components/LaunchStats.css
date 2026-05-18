@@ -31,3 +31,21 @@
   color: var(--text-primary);
   line-height: 1;
 }
+
+@media (max-width: 640px) {
+  .stats-row {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-card {
+    padding: 24px 20px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0;
+  }
+
+  .stat-value {
+    font-size: 44px;
+  }
+}

@@ -148,3 +148,47 @@
 .state-msg.error {
   color: var(--danger);
 }
+
+@media (max-width: 640px) {
+  .next-launch h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+
+  .launch-card {
+    padding: 24px 18px;
+  }
+
+  .launch-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .launch-date-text {
+    align-items: flex-start;
+  }
+
+  .launch-name {
+    font-size: 22px;
+  }
+
+  .launch-details {
+    font-size: 13px;
+    margin-bottom: 24px;
+  }
+
+  .countdown {
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+
+  .countdown-value {
+    font-size: 36px;
+  }
+
+  .countdown-unit {
+    min-width: 40px;
+  }
+}

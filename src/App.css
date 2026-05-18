@@ -149,3 +149,63 @@ section {
   font-size: 11px;
   letter-spacing: 0.15em;
 }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .site-header {
+    padding: 10px 0;
+  }
+
+  .site-header .container {
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    font-size: 17px;
+    letter-spacing: 0.25em;
+  }
+
+  .avatar-link {
+    margin-right: 10px;
+  }
+
+  /* Nav wraps to second row */
+  .nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    border-top: 1px solid var(--border);
+    margin-top: 8px;
+    gap: 0;
+  }
+
+  .nav-tab {
+    flex: 1;
+    padding: 8px 10px;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-align: center;
+  }
+
+  .api-log-btn {
+    margin-left: auto;
+    padding: 6px 10px;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    gap: 5px;
+  }
+
+  section {
+    padding-top: 110px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 14px;
+  }
+}
