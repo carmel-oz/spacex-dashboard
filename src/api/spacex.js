@@ -3,7 +3,8 @@ import { getCached } from './cache'
 
 // Launch Library 2 — actively maintained, data current through 2026
 const LL2 = 'https://ll.thespacedevs.com/2.3.0'
-const SpX = 'launch_service_provider__name=SpaceX'
+// SpaceX agency ID = 121 in LL2 — lsp__id is the only working filter in v2.3.0
+const SpX = 'lsp__id=121'
 
 // r-spacex API — kept only for static rocket specs
 const SPACEX_API = 'https://api.spacexdata.com/v4'
