@@ -81,7 +81,19 @@ function App() {
 
       <footer className="site-footer">
         <div className="container">
-          <span>SpaceX Dashboard — Data sourced from ll.thespacedevs.com &amp; api.spacexdata.com</span>
+          <p className="footer-built">
+            Built by{' '}
+            <a href="https://www.linkedin.com/in/oz-carmel-automation/" target="_blank" rel="noreferrer">Oz Carmel</a>
+            {' '}&mdash; React + Vite &middot; {new Date().getFullYear()}
+          </p>
+          <p className="footer-data">
+            Data:{' '}
+            <a href="https://ll.thespacedevs.com" target="_blank" rel="noreferrer">Launch Library 2</a>
+            {' '}&amp;{' '}
+            <a href="https://github.com/r-spacex/SpaceX-API" target="_blank" rel="noreferrer">r-spacex API</a>
+            {' '}&middot;{' '}
+            <a href="https://github.com/carmel-oz/spacex-dashboard" target="_blank" rel="noreferrer">GitHub</a>
+          </p>
         </div>
       </footer>
 

@@ -143,11 +143,28 @@ section {
 /* ── Footer ── */
 .site-footer {
   border-top: 1px solid var(--border);
-  padding: 32px 0;
+  padding: 32px 0 56px;
   text-align: center;
   color: var(--text-muted);
   font-size: 11px;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.12em;
+}
+
+.footer-built {
+  margin-bottom: 6px;
+}
+
+.footer-data {
+  margin: 0;
+}
+
+.site-footer a {
+  color: var(--accent-light);
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
 }
 
 /* ── Responsive ── */
