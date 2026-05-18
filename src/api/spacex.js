@@ -34,6 +34,38 @@ export const getRockets = () =>
     return data
   })
 
+export const getFalcon9Launches = () =>
+  getCached('falcon9-launches', 6 * HR, async () => {
+    const { data } = await axiosInstance.get(
+      `${LL2}/launches/previous/?${SpX}&rocket__configuration__name=Falcon+9&limit=50&ordering=-net&format=json`
+    )
+    return data
+  })
+
+export const getFalconHeavyLaunches = () =>
+  getCached('falconheavy-launches', 6 * HR, async () => {
+    const { data } = await axiosInstance.get(
+      `${LL2}/launches/previous/?${SpX}&rocket__configuration__name=Falcon+Heavy&limit=50&ordering=-net&format=json`
+    )
+    return data
+  })
+
+export const getStarshipFlightCount = () =>
+  getCached('starship-flight-count', 6 * HR, async () => {
+    const { data } = await axiosInstance.get(
+      `${LL2}/launches/previous/?${SpX}&rocket__configuration__name=Starship&limit=1&format=json`
+    )
+    return data.count
+  })
+
+export const getStarshipLaunches = () =>
+  getCached('starship-launches', 6 * HR, async () => {
+    const { data } = await axiosInstance.get(
+      `${LL2}/launches/previous/?${SpX}&rocket__configuration__name=Starship&limit=20&ordering=-net&format=json`
+    )
+    return data
+  })
+
 export const getStarship = () =>
   getCached('starship', 6 * HR, async () => {
     const { data } = await axiosInstance.post(`${SPACEX_API}/rockets/query`, {

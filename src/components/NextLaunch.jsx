@@ -56,10 +56,9 @@ function Countdown({ targetDate }) {
   )
 }
 
-export default function NextLaunch() {
-  const [launches, setLaunches]       = useState([])
-  const [selectedRocket, setSelected] = useState('all')
-  const [loading, setLoading]         = useState(true)
+export default function NextLaunch({ filter = 'all', setFilter }) {
+  const [launches, setLaunches] = useState([])
+  const [loading, setLoading]   = useState(true)
 
   useEffect(() => {
     getUpcomingLaunches()
@@ -68,9 +67,9 @@ export default function NextLaunch() {
       .finally(() => setLoading(false))
   }, [])
 
-  const filtered   = selectedRocket === 'all'
+  const filtered   = filter === 'all'
     ? launches
-    : launches.filter(l => l.rocket?.configuration?.name?.includes(selectedRocket))
+    : launches.filter(l => l.rocket?.configuration?.name?.includes(filter))
   const nextLaunch = filtered[0]
 
   return (
@@ -82,8 +81,8 @@ export default function NextLaunch() {
         {ROCKET_OPTIONS.map(opt => (
           <button
             key={opt.value}
-            className={`rocket-btn ${selectedRocket === opt.value ? 'active' : ''}`}
-            onClick={() => setSelected(opt.value)}
+            className={`rocket-btn ${filter === opt.value ? 'active' : ''}`}
+            onClick={() => setFilter(opt.value)}
           >
             {opt.label}
           </button>

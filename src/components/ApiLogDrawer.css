@@ -106,6 +106,16 @@
   background: rgba(244, 67, 54, 0.1);
 }
 
+.cache-btn {
+  margin-left: 8px;
+  border-color: rgba(255, 152, 0, 0.5);
+  color: #ff9800;
+}
+
+.cache-btn:hover {
+  background: rgba(255, 152, 0, 0.1);
+}
+
 /* ── Table ── */
 .log-table {
   overflow-y: auto;
@@ -114,7 +124,8 @@
 
 .log-header {
   display: grid;
-  grid-template-columns: 60px 90px 1fr 60px 80px 80px;
+  grid-template-columns: 55px 100px minmax(160px, 1fr) 60px 75px 75px;
+  column-gap: 16px;
   padding: 8px 24px;
   background: #050505;
   border-bottom: 1px solid var(--border);
@@ -136,7 +147,8 @@
 /* ── Log row ── */
 .log-row {
   display: grid;
-  grid-template-columns: 60px 90px 1fr 60px 80px 80px;
+  grid-template-columns: 55px 100px minmax(160px, 1fr) 60px 75px 75px;
+  column-gap: 16px;
   padding: 9px 24px;
   border-bottom: 1px solid rgba(255,255,255,0.04);
   align-items: center;

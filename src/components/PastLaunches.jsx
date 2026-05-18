@@ -26,11 +26,10 @@ function formatShortDate(dateStr) {
   })
 }
 
-export default function PastLaunches() {
+export default function PastLaunches({ filter, setFilter }) {
   const [launches, setLaunches]       = useState([])
   const [offset, setOffset]           = useState(0)
   const [hasMore, setHasMore]         = useState(true)
-  const [filter, setFilter]           = useState('all')
   const [loading, setLoading]         = useState(true)
   const [loadingMore, setLoadingMore] = useState(false)
 
@@ -68,15 +67,6 @@ export default function PastLaunches() {
       <h2>PAST LAUNCHES</h2>
 
       <div className="filter-row">
-        {ROCKET_FILTERS.map(f => (
-          <button
-            key={f.value}
-            className={`filter-btn ${filter === f.value ? 'active' : ''}`}
-            onClick={() => setFilter(f.value)}
-          >
-            {f.label}
-          </button>
-        ))}
         {!loading && (
           <span className="launch-count">{filtered.length} LOADED</span>
         )}

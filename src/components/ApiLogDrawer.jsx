@@ -25,6 +25,13 @@ function MethodBadge({ method }) {
   return <span className={`log-method ${method.toLowerCase()}`}>{method}</span>
 }
 
+function clearApiCache() {
+  Object.keys(localStorage)
+    .filter(k => k.startsWith('spx:'))
+    .forEach(k => localStorage.removeItem(k))
+  window.location.reload()
+}
+
 export default function ApiLogDrawer() {
   const { logs, isOpen, setIsOpen, clearLogs } = useApiLogger()
   const [expandedId, setExpandedId] = useState(null)
@@ -50,7 +57,8 @@ export default function ApiLogDrawer() {
               <span className="legend-item"><span className="log-method get">GET</span> read data</span>
               <span className="legend-item"><span className="log-method post">POST</span> filtered query</span>
             </div>
-            <button className="clear-btn" onClick={clearLogs}>CLEAR</button>
+            <button className="clear-btn" onClick={clearLogs}>CLEAR LOG</button>
+            <button className="clear-btn cache-btn" onClick={clearApiCache}>CLEAR CACHE &amp; RELOAD</button>
           </div>
 
           <div className="log-table">

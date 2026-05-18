@@ -17,6 +17,7 @@ const TABS = [
 function App() {
   const { logs, isOpen, setIsOpen } = useApiLogger()
   const [activeTab, setActiveTab] = useState('launches')
+  const [rocketFilter, setRocketFilter] = useState('all')
 
   return (
     <div className="app">
@@ -62,9 +63,9 @@ function App() {
         {activeTab === 'launches' && (
           <div className="container">
             <section id="launches">
-              <NextLaunch />
-              <LaunchStats />
-              <PastLaunches />
+              <NextLaunch filter={rocketFilter} setFilter={setRocketFilter} />
+              <LaunchStats filter={rocketFilter} />
+              <PastLaunches filter={rocketFilter} setFilter={setRocketFilter} />
             </section>
           </div>
         )}
